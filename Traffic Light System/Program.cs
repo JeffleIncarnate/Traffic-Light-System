@@ -10,7 +10,33 @@ namespace Traffic_Light_System
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Has to be one Higher than your current end point
+            int end = 11;
+
+            int a = 1;
+            int b = 1;
+            int c = 1;
+            int d = 1;
+
+            while(true)
+            {
+                Console.WriteLine(a);
+                Console.WriteLine(b);
+                Console.WriteLine(c);
+                Console.WriteLine(d);
+
+                a++;
+                b++;
+                c++;
+                d++;
+
+                if (d >= end)
+                {
+                    break;
+                }
+            }
+
+            Console.WriteLine("end!");
             Console.ReadLine();
         }
     }
