@@ -10,34 +10,77 @@ namespace Traffic_Light_System
     {
         static void Main(string[] args)
         {
-            // Has to be one Higher than your current end point
-            int end = 11;
+            BiggestNum(1, 10, 30, 50);
+            Console.WriteLine("Passed");
 
-            int a = 1;
-            int b = 1;
-            int c = 1;
-            int d = 1;
+            SmallestNum(10, 40, 50, 100);
+            Console.WriteLine("Passed");
 
-            while(true)
+            Console.ReadLine();
+        }
+
+        public static void BiggestNum(int a, int b, int c, int d)
+        {
+            int biggestNum;
+
+            while (true)
             {
-                Console.WriteLine(a);
-                Console.WriteLine(b);
-                Console.WriteLine(c);
-                Console.WriteLine(d);
-
-                a++;
-                b++;
-                c++;
-                d++;
-
-                if (d >= end)
+                // BIGGER CONDITIONAL STATEMENTS 
+                if (a > b && a > c && a > d)
                 {
+                    biggestNum = a;
+                    break;
+                }
+                else if (b > a &&  b > c && b > d)
+                {
+                    biggestNum = b;
+                    break;
+                }
+                else if (c > a && c > b && c > d)
+                {
+                    biggestNum = c;
+                    break;
+                }
+                else if (d > a && d > b && d > c)
+                {
+                    biggestNum = d;
                     break;
                 }
             }
 
-            Console.WriteLine("end!");
-            Console.ReadLine();
+            Console.WriteLine("The Biggest Number is " + biggestNum);
+        }
+
+        public static void SmallestNum(int a, int b, int c, int d)
+        {
+            int smallestNum;
+
+            while (true)
+            {
+                // BIGGER CONDITIONAL STATEMENTS 
+                if (a < b && a < c && a < d)
+                {
+                    smallestNum = a;
+                    break;
+                }
+                else if (b < a && b < c && b < d)
+                {
+                    smallestNum = b;
+                    break;
+                }
+                else if (c < a && c < b && c < d)
+                {
+                    smallestNum = c;
+                    break;
+                }
+                else if (d < a && d < b && d < c)
+                {
+                    smallestNum = d;
+                    break;
+                }
+            }
+
+            Console.WriteLine("The Smallest Number is " + smallestNum);
         }
     }
 }
