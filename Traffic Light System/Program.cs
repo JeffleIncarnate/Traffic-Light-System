@@ -16,6 +16,9 @@ namespace Traffic_Light_System
             SmallestNum(10, 40, 50, 100);
             Console.WriteLine("Passed");
 
+            EqualNum();
+            Console.WriteLine("Passed");
+
             Console.ReadLine();
         }
 
@@ -81,6 +84,28 @@ namespace Traffic_Light_System
             }
 
             Console.WriteLine("The Smallest Number is " + smallestNum);
+        }
+
+        public static void EqualNum()
+        {
+            int val = 3;
+
+
+            switch (val)
+            {
+                case 1:
+                    Console.WriteLine("case 1");
+                    break;
+                case 2:
+                    Console.WriteLine("case 2");
+                    break;
+                case 3:
+                    Console.WriteLine("case 3");
+                    break;
+                case 4:
+                    Console.WriteLine("case 4");
+                    break;
+            }
         }
     }
 }
