@@ -10,13 +10,13 @@ namespace Traffic_Light_System
     {
         static void Main(string[] args)
         {
-            BiggestNum(1, 10, 30, 50);
+            BiggestNum(1, 40, 50, 100);
             Console.WriteLine("Passed");
 
             SmallestNum(10, 40, 50, 100);
             Console.WriteLine("Passed");
 
-            EqualNum();
+            EqualNum(10, 10, 10, 10);
             Console.WriteLine("Passed");
 
             Console.ReadLine();
@@ -86,25 +86,17 @@ namespace Traffic_Light_System
             Console.WriteLine("The Smallest Number is " + smallestNum);
         }
 
-        public static void EqualNum()
-        {
-            int val = 3;
-
-
-            switch (val)
+        public static void EqualNum(int a, int b, int c, int d)
+        { 
+            for (int i = 0; i <= 10; i++)
             {
-                case 1:
-                    Console.WriteLine("case 1");
-                    break;
-                case 2:
-                    Console.WriteLine("case 2");
-                    break;
-                case 3:
-                    Console.WriteLine("case 3");
-                    break;
-                case 4:
-                    Console.WriteLine("case 4");
-                    break;
+                for (int z = 0; z<=10; z++)
+                {
+                    for (int v = 0; v <= 10; v++)
+                    {
+                        Console.WriteLine(v);
+                    }
+                }
             }
         }
     }
