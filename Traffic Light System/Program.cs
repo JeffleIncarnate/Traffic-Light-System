@@ -16,7 +16,7 @@ namespace Traffic_Light_System
             SmallestNum(10, 40, 50, 100);
             Console.WriteLine("Passed");
 
-            EqualNum(10, 10, 10, 10);
+            EqualNum(10, 40, 50, 100);
             Console.WriteLine("Passed");
 
             Console.ReadLine();
@@ -87,15 +87,86 @@ namespace Traffic_Light_System
         }
 
         public static void EqualNum(int a, int b, int c, int d)
-        { 
-            for (int i = 0; i <= 10; i++)
+        {
+            bool equalNum = false;
+
+            while (true)
             {
-                for (int z = 0; z<=10; z++)
+                // CHECKING IF A == AND OTHER INT
+                if (a == b) {
+                    Console.WriteLine("a and b are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (a == c) {
+                    Console.WriteLine("a and c are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (a == d) {
+                    Console.WriteLine("a and d are equal");
+                    equalNum = true;
+                    break;
+                }
+
+
+                // CHECKING IF B == AND OTHER INT
+                if (b == a) {
+                    Console.WriteLine("b and a are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (b == c) {
+                    Console.WriteLine("b and c are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (b == d) {
+                    Console.WriteLine("b and d are equal");
+                    equalNum = true;
+                    break;
+                }
+
+
+                // CHECKING IF C == AND OTHER INT
+                if (c == a) {
+                    Console.WriteLine("c and a are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (c == b) {
+                    Console.WriteLine("c and b are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (c == d) {
+                    Console.WriteLine("c and d are equal");
+                    equalNum = true;
+                    break;
+                }
+
+
+                // CHECKING IF D == AND OTHER INT
+                if (d == a) {
+                    Console.WriteLine("b and a are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (d == b) {
+                    Console.WriteLine("d and b are equal");
+                    equalNum = true;
+                    break;
+                }
+                else if (d == c) {
+                    Console.WriteLine("d and c are equal");
+                    equalNum = true;
+                    break;
+                }
+
+                if (equalNum == false)
                 {
-                    for (int v = 0; v <= 10; v++)
-                    {
-                        Console.WriteLine(v);
-                    }
+                    Console.WriteLine("There are no pairs in this Array");
+                    break;
                 }
             }
         }
