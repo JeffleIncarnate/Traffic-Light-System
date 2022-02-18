@@ -12,18 +12,25 @@ namespace Traffic_Light_System
         static void Main(string[] args)
         {
             // Varaiables
-            int[] theArray = { 10, 40, 50, 100 };
+            int[] theArray = { 50, 23, 66, 12 };
+            int[] theArray2 = { 50, 23, 66, 12 };
 
-            BiggestNum(1, 40, 50, 100);
+            BiggestNum(50, 23, 66, 12);
             Console.WriteLine("Passed");
 
-            SmallestNum(10, 40, 50, 100);
+            SmallestNum(50, 23, 66, 12);
             Console.WriteLine("Passed");
 
-            EqualNum(10, 40, 50, 100);
+            EqualNum(50, 23, 66, 12);
             Console.WriteLine("Passed");
 
-            IntArrayBubbleSort(theArray, 10, 40, 50, 100); 
+            IntArrayBubbleSort(theArray, 50, 23, 66, 12);
+            Console.WriteLine("\nPassed");
+
+            forEachNumer(theArray2, 50, 23, 66, 12);
+            Console.WriteLine("\nPassed");
+
+            stackNumbers();
 
             Console.ReadLine();
         }
@@ -203,6 +210,10 @@ namespace Traffic_Light_System
             data[n] = temporary;
         }
 
+        /* 
+            This Method sorts the Array based on how larget of small the last number is so when the loop is 
+            finished, it'll return the array back to the Main funtion
+        */
         public static void IntArrayBubbleSort(int[] arr, int a, int b, int c, int d)
         {
             int temp;
@@ -221,6 +232,18 @@ namespace Traffic_Light_System
             Console.Write("Sorted: ");
             foreach (int p in arr)
                 Console.Write(p + " ");
+        }
+
+        /* 
+            This method takes in an intager array then the foreach funtion takes those 4 ints and prints
+            them out
+        */
+        public static void forEachNumer(int[] numbers, int a, int b, int c, int d)
+        {
+            foreach(int number in numbers)
+            {
+                Console.Write(number + ", ");
+            }
         }
     }
 }
