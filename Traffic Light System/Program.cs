@@ -8,8 +8,12 @@ namespace Traffic_Light_System
 {
     internal class Program
     {
+        // This is the Main Method, every time I start the compiler, this method starts fist
         static void Main(string[] args)
         {
+            // Varaiables
+            int[] theArray = { 10, 40, 50, 100 };
+
             BiggestNum(1, 40, 50, 100);
             Console.WriteLine("Passed");
 
@@ -19,13 +23,20 @@ namespace Traffic_Light_System
             EqualNum(10, 40, 50, 100);
             Console.WriteLine("Passed");
 
+            IntArrayBubbleSort(theArray, 10, 40, 50, 100); 
+
             Console.ReadLine();
         }
 
+        // This method is a void that calculates the Bigges num, then returns it back to the main Method
         public static void BiggestNum(int a, int b, int c, int d)
         {
             int biggestNum;
 
+            /* 
+                This while loop runs through the code over and over again to check if one intager is bigger
+                the other ones e.g a > b or c < a
+            */
             while (true)
             {
                 // BIGGER CONDITIONAL STATEMENTS 
@@ -54,6 +65,10 @@ namespace Traffic_Light_System
             Console.WriteLine("The Biggest Number is " + biggestNum);
         }
 
+        /*
+            This method gets the smallest intager between the 4 intagers that it takes as a parameter then it 
+            returns it back to the Main Method
+        */
         public static void SmallestNum(int a, int b, int c, int d)
         {
             int smallestNum;
@@ -86,6 +101,10 @@ namespace Traffic_Light_System
             Console.WriteLine("The Smallest Number is " + smallestNum);
         }
 
+        /*
+            This Method Looks for what 2 intagers have the same value, then it returns the value back the the 
+            main Method
+        */
         public static void EqualNum(int a, int b, int c, int d)
         {
             bool equalNum = false;
@@ -169,6 +188,39 @@ namespace Traffic_Light_System
                     break;
                 }
             }
+        }
+
+        /*
+            This method takes in 3 elements, an array, and 2 intagers, it then exchanges the values till
+            the value of temporary is the same
+        */
+        public static void exchange(int[] data, int m, int n)
+        {
+            int temporary;
+
+            temporary = data[m];
+            data[m] = data[n];
+            data[n] = temporary;
+        }
+
+        public static void IntArrayBubbleSort(int[] arr, int a, int b, int c, int d)
+        {
+            int temp;
+            for (int j = 0; j <= arr.Length - 2; j++)
+            {
+                for (int i = 0; i <= arr.Length - 2; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        temp = arr[i + 1];
+                        arr[i + 1] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+            Console.Write("Sorted: ");
+            foreach (int p in arr)
+                Console.Write(p + " ");
         }
     }
 }
