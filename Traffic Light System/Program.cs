@@ -203,6 +203,7 @@ namespace Traffic_Light_System
         */
         public static void exchange(int[] data, int m, int n)
         {
+            // This
             int temporary;
 
             temporary = data[m];
@@ -214,13 +215,19 @@ namespace Traffic_Light_System
             This Method sorts the Array based on how larget of small the last number is so when the loop is 
             finished, it'll return the array back to the Main funtion
         */
+        // Bubble sort algorithem
         public static void IntArrayBubbleSort(int[] arr, int a, int b, int c, int d)
         {
             int temp;
+
+            // This loop gets the length of the array -- it also check to see if the first num is less or more
+            // It checks to see if the first int is bigger, and it changes it if it's bigger
             for (int j = 0; j <= arr.Length - 2; j++)
             {
+                // This Loop does the exact same thing as the outer loop
                 for (int i = 0; i <= arr.Length - 2; i++)
                 {
+                    // This is a if statement that exchanges the 2 varaibles for for the temp variable
                     if (arr[i] > arr[i + 1])
                     {
                         temp = arr[i + 1];
@@ -229,6 +236,8 @@ namespace Traffic_Light_System
                     }
                 }
             }
+
+            // This writes the sorted list to the Console using a foreach loop 
             Console.Write("Sorted: ");
             foreach (int p in arr)
                 Console.Write(p + " ");
