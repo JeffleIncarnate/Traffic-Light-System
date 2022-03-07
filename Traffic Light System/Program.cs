@@ -15,61 +15,64 @@ namespace Traffic_Light_System
             int[] theArray = { 50, 23, 66, 12 };
             int[] theArray2 = { 50, 23, 66, 12 };
 
-            BiggestNum(50, 23, 66, 12);
-            Console.WriteLine("Passed");
+            if (BiggestNum(0, 0, 0, 0) == 1)
+            {
+                Console.WriteLine("Failed");
+            } else
+            {
+                Console.WriteLine("The biggest number is " + BiggestNum(0, 0, 0, 0));
+            }
 
             SmallestNum(50, 23, 66, 12);
-            Console.WriteLine("Passed");
 
             EqualNum(50, 23, 66, 12);
-            Console.WriteLine("Passed");
 
             IntArrayBubbleSort(theArray, 50, 23, 66, 12);
-            Console.WriteLine("\nPassed");
 
             forEachNumer(theArray2, 50, 23, 66, 12);
-            Console.WriteLine("\nPassed");
-
-            stackNumbers();
 
             Console.ReadLine();
         }
 
         // This method is a void that calculates the Bigges num, then returns it back to the main Method
-        public static void BiggestNum(int a, int b, int c, int d)
+        public static int BiggestNum(int a, int b, int c, int d)
         {
-            int biggestNum;
+            int biggestNum = 0;
+            bool isPassed = false;
 
             /* 
                 This while loop runs through the code over and over again to check if one intager is bigger
                 the other ones e.g a > b or c < a
             */
-            while (true)
+            // BIGGER CONDITIONAL STATEMENTS 
+            if (a > b && a > c && a > d)
             {
-                // BIGGER CONDITIONAL STATEMENTS 
-                if (a > b && a > c && a > d)
-                {
-                    biggestNum = a;
-                    break;
-                }
-                else if (b > a &&  b > c && b > d)
-                {
-                    biggestNum = b;
-                    break;
-                }
-                else if (c > a && c > b && c > d)
-                {
-                    biggestNum = c;
-                    break;
-                }
-                else if (d > a && d > b && d > c)
-                {
-                    biggestNum = d;
-                    break;
-                }
+                biggestNum = a;
+                isPassed = true;
+            }
+            else if (b > a &&  b > c && b > d)
+            {
+                biggestNum = b;
+                isPassed = true;
+            }
+            else if (c > a && c > b && c > d)
+            {
+                biggestNum = c;
+                isPassed = true;
+            }
+            else if (d > a && d > b && d > c)
+            {
+                biggestNum = d;
+                isPassed = true;
             }
 
-            Console.WriteLine("The Biggest Number is " + biggestNum);
+            if (isPassed == true)
+            {
+                return biggestNum;
+            } else
+            {
+                return 1;
+            }
         }
 
         /*
