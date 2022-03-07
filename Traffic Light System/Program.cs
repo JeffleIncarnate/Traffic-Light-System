@@ -18,9 +18,12 @@ namespace Traffic_Light_System
             if (BiggestNum(0, 0, 0, 0) == 1)
             {
                 Console.WriteLine("Failed");
+                Console.WriteLine();
             } else
             {
                 Console.WriteLine("The biggest number is " + BiggestNum(0, 0, 0, 0));
+                Console.WriteLine("Success\n");
+                Console.WriteLine("\n");
             }
 
             SmallestNum(50, 23, 66, 12);
