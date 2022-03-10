@@ -15,18 +15,25 @@ namespace Traffic_Light_System
             int[] theArray = { 50, 23, 66, 12 };
             int[] theArray2 = { 50, 23, 66, 12 };
 
-            if (BiggestNum(0, 0, 0, 0) == 1)
+            if (BiggestNum(50, 23, 66, 12) == 1)
             {
                 Console.WriteLine("Failed");
                 Console.WriteLine();
             } else
             {
-                Console.WriteLine("The biggest number is " + BiggestNum(0, 0, 0, 0));
+                Console.WriteLine("The biggest number is " + BiggestNum(50, 23, 66, 12));
                 Console.WriteLine("Success\n");
-                Console.WriteLine("\n");
             }
 
-            SmallestNum(50, 23, 66, 12);
+            if (SmallestNum(50, 23, 66, 12) == 1)
+            {
+                Console.WriteLine("Failed");
+                Console.WriteLine();
+            } else
+            {
+                Console.WriteLine("The smallest number is " + SmallestNum(50, 23, 66, 12));
+                Console.WriteLine("Sucess\n");
+            }
 
             EqualNum(50, 23, 66, 12);
 
@@ -82,36 +89,40 @@ namespace Traffic_Light_System
             This method gets the smallest intager between the 4 intagers that it takes as a parameter then it 
             returns it back to the Main Method
         */
-        public static void SmallestNum(int a, int b, int c, int d)
+        public static int SmallestNum(int a, int b, int c, int d)
         {
-            int smallestNum;
+            int smallestNum = 0;
+            bool isPassed = false;
 
-            while (true)
+            // BIGGER CONDITIONAL STATEMENTS 
+            if (a < b && a < c && a < d)
             {
-                // BIGGER CONDITIONAL STATEMENTS 
-                if (a < b && a < c && a < d)
-                {
-                    smallestNum = a;
-                    break;
-                }
-                else if (b < a && b < c && b < d)
-                {
-                    smallestNum = b;
-                    break;
-                }
-                else if (c < a && c < b && c < d)
-                {
-                    smallestNum = c;
-                    break;
-                }
-                else if (d < a && d < b && d < c)
-                {
-                    smallestNum = d;
-                    break;
-                }
+                smallestNum = a;
+                isPassed = true;
+            }
+            else if (b < a && b < c && b < d)
+            {
+                smallestNum = b;
+                isPassed = true;
+            }
+            else if (c < a && c < b && c < d)
+            {
+                smallestNum = c;
+                isPassed = true;
+            }
+            else if (d < a && d < b && d < c)
+            {
+                smallestNum = d;
+                isPassed = true;
             }
 
-            Console.WriteLine("The Smallest Number is " + smallestNum);
+            if (isPassed == true)
+            {
+                return smallestNum;
+            } else
+            {
+                return 1;
+            }
         }
 
         /*
@@ -246,7 +257,7 @@ namespace Traffic_Light_System
             // This writes the sorted list to the Console using a foreach loop 
             Console.Write("Sorted: ");
             foreach (int p in arr)
-                Console.Write(p + " ");
+                Console.Write(p + ", ");
         }
 
         /* 
